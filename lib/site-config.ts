@@ -9,7 +9,6 @@ export const siteConfig = {
     headshot: "/images/headshot/abhyudai-portrait.jpg",
     skyline: "/images/backgrounds/nyc-skyline.jpg",
     resume: "/resume/abhyudai-chauhan-resume.pdf",
-    faviconSource: "/images/favicon/statue-of-liberty.png",
   },
   author: {
     name: "Abhyudai Chauhan",

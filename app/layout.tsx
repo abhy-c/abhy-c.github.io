@@ -7,6 +7,9 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
@@ -16,7 +19,18 @@ export const metadata: Metadata = {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`,
   },
+  authors: [{ name: siteConfig.author.name }],
+  creator: siteConfig.author.name,
   description: siteConfig.description,
+  keywords: [
+    "Abhyudai Chauhan",
+    "product manager",
+    "NYU MBA",
+    "AI strategy",
+    "fintech product",
+    "B2B product",
+    "SQL analytics",
+  ],
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -24,11 +38,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.title,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og/default.svg",
+        width: 1200,
+        height: 630,
+        alt: "Abhyudai Chauhan portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: ["/og/default.svg"],
   },
 };
 
