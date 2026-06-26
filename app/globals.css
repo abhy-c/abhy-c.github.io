@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f3ee;
+  --foreground: #000000;
+  --surface: #ffffff;
+  --surface-strong: #f8fbfb;
+  --muted: #1f2937;
+  --border: #c7d4d8;
+  --accent: #0f8b8d;
+  --accent-soft: #d6efef;
+  --accent-secondary: #b08a3e;
+  --accent-secondary-soft: #efe5cf;
+  --success: #42785f;
+  --font-sans-local: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
+  --font-serif-local: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-soft: var(--accent-secondary-soft);
+  --color-success: var(--success);
+  --font-sans: var(--font-sans-local);
+  --font-serif: var(--font-serif-local);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans-local);
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+::selection {
+  background: rgba(15, 139, 141, 0.18);
+}
+
+.shell-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(252, 254, 254, 0.98));
+  box-shadow: 0 18px 50px -42px rgba(15, 23, 42, 0.35);
+}
+
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.eyebrow-secondary {
+  color: var(--accent-secondary);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 1.1rem + 2vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.kicker-serif {
+  font-family: var(--font-serif-local);
+}
+
+.atmosphere-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.atmosphere-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(246, 243, 238, 0.72), rgba(246, 243, 238, 0.96)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.28) 52%, transparent 78%),
+    linear-gradient(135deg, rgba(15, 139, 141, 0.08), transparent 45%);
+  pointer-events: none;
+}
+
+.stat-label {
+  border: 1px solid rgba(15, 139, 141, 0.2);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.article {
+  color: var(--foreground);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.article > * + * {
+  margin-top: 1.3rem;
+}
+
+.article h2,
+.article h3 {
+  font-family: var(--font-sans-local);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.article h2 {
+  font-size: clamp(1.55rem, 1.2rem + 0.8vw, 2rem);
+}
+
+.article h3 {
+  font-size: 1.25rem;
+}
+
+.article p,
+.article ul,
+.article ol,
+.article blockquote {
+  color: var(--foreground);
+}
+
+.article ul,
+.article ol {
+  padding-left: 1.4rem;
+}
+
+.article li + li {
+  margin-top: 0.55rem;
+}
+
+.article a {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+.article blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  font-family: var(--font-serif-local);
+  font-size: 1.2rem;
+}
+
+.article code {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(15, 23, 42, 0.04);
+  border-radius: 0.45rem;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.92em;
+}
+
+.article hr {
+  margin-top: 2rem;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.progress-track {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
